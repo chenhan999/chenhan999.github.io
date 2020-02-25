@@ -6,8 +6,6 @@ date:       2017-01-06
 author:     BY
 header-img: img/post-bg-ios9-web.jpg
 catalog: true
-tags:
-    - iOS
 ---
 # 前言
 
