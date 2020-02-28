@@ -81,3 +81,19 @@ synchronized(list.get()) {
 ```
 * CopyOnWriteArrayList在遍历的使用不会抛出ConcurrentModificationException异常，并且遍历的时候就不用额外加锁
 * 元素可以为null
+* 缺点是比较耗费内存
+* hashMap -> ConcurrentHashMap， ArraySet -> CopyOnWriteArraySet , ArrayList -> CopyOnWriteArrayList ,后者都是在JUC中针对并发
+
+### 同步工具类-> CountDownLatch
+
+在report导出中，在多个线程查询的数据统一写入List，最终在主线程中通过Excel导出，调试中发现子线程还未执行完就开始执行主线程，导致数据缺失
+在JUC中找到解决方法CountDownLatch类，通过  
+`new CountDownLatch()`  
+`countDownLatch.countDown();`  
+`countDownLatch.await();`
+配合使用，使主线程等待子线程全部执行完成之后再执行。  
+类似与Thread的join方法，其区别在于：  
+在使用join()中，多个线程只有在执行完毕之后欧才能被解除阻塞，而在CountDownLatch中，线程可以在任何时候任何位置调用countdown方法减少计数，通过这种方式，我们可以更好地控制线程的解除阻塞，而不是仅仅依赖于连接线程的完成。
+代码中的使用
+![avatar](/img/report.bmp)
+
