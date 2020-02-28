@@ -1,3 +1,14 @@
+---
+layout:     post
+title:      JUC并发包学习
+subtitle:   JUC并发包
+date:       2020-02-28
+author:     Han
+header-img: img/post-bg-ios9-web.jpg
+catalog: true
+tags:
+    - JUC-并发包
+---
 学习背景：
 
 在之前report导出需求中，因为数据量较大，导出时间太久，故使用到了多线程查询，期间接触到JUC，在此整理一下学习内容
