@@ -15,15 +15,15 @@ tags:
 
 java.util.concurrent并发编程包是专门为Java并发编程设计的，其中设计的类主要分为以下几部分：
 
-## 1. 显式锁
+1. 显式锁
 
-## 2. 原子变量
+2. 原子变量
 
-## 3. 线程池
+3. 线程池
 
-## 4. 并发容器
+4. 并发容器
 
-## 5. 同步工具类
+5. 同步工具类
 
 ***
 ### 并发容器-> CopyOnWriteArrayList
@@ -35,18 +35,18 @@ java.util.concurrent并发编程包是专门为Java并发编程设计的，其�
 
 解决方法：
 
-1. 通过 Collections 的 synchronizedList 方法将 ArrayList 转换成线程安全的容器后再使用。
+1.通过 Collections 的 synchronizedList 方法将 ArrayList 转换成线程安全的容器后再使用。
 
 `List<Object> list =Collections.synchronizedList(new ArrayList<Object>);`
 
-2. list.add()方法加锁
+2.list.add()方法加锁
 
 ```
 synchronized(list.get()) {
  list.get().add(model);
  }
  ```
- 3. 使用线程安全的 CopyOnWriteArrayList 代替线程不安全的 ArrayList。
+3.使用线程安全的 CopyOnWriteArrayList 代替线程不安全的 ArrayList。
  
  ```
  List<Object> list1 = new CopyOnWriteArrayList<Object>();
