@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      JUC并发包学习
+title:      JUC并发包
 subtitle:   JUC并发包
 date:       2020-02-28
 author:     Han
@@ -98,3 +98,12 @@ synchronized(list.get()) {
 
 类似与Thread的join方法，其区别在于：  
 在使用join()中，多个线程只有在执行完毕之后欧才能被解除阻塞，而在CountDownLatch中，线程可以在任何时候任何位置调用countdown方法减少计数，通过这种方式，我们可以更好地控制线程的解除阻塞，而不是仅仅依赖于连接线程的完成。
+
+
+
+##剩余待更新   
+显式锁
+
+原子变量
+
+线程池
